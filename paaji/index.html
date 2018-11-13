@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="style.css" />
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js"></script>
+  <script src="script.js"></script>
+  <title>Explore Your Favourite Movies</title>
+</head>
+
+<body ng-app="OMDbAPISearch">
+  <div class="container" ng-controller="searchMovies">
+
+    <h1>Search a Movie Title</h1>
+        <form>
+      <div class="search">
+	  <ul><li>Gardians of Galaxy Vol 2</li>
+	  <li>Avengers</li>
+	  <li>Mission Impossible</li>
+	  <li>Wonder Woman</li>
+	  <li>The Originals</li></ul>
+	  
+       <input id="theSearch" ng-model="searchparam" placeholder="movie name" type="text" ngTrim="true" />
+       <button ng-click="fetch()">Search</button>
+       <div class="clear"></div>
+      </div>
+    </form>
+    <Table>
+	<tr><td><td><img src="download1.jpg"></td><td><img src="download2.jpg"></td><td><img src="download3.jpg"></td></td></tr>
+	<tr><td><img src="download4.jpg"></td><td><img src="download5.jpg"></td><td><img src="download6.jpg"></td></tr>
+	<tr><td><img src="images.jpg"></td></tr>
+	
+	</Table>
+    <div class="results">
+
+      <div class="result" movie-srch-results ng-repeat="movie in movieResults"></div>
+
+    </div>
+    <div class="noResults"></div>
+
+  </div>
+</body>
+
+</html>
